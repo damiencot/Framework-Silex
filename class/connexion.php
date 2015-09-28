@@ -18,7 +18,7 @@ class Connexion {
      */
     private function _get() {
         if (is_null(self::$_pdo)) {
-            self::$_pdo = new PDO('mysql:dbname=m2l_version0;host=127.0.0.1', 'root', 'pwsio');
+            self::$_pdo = new PDO('mysql:dbname=m2l_V0;host=127.0.0.1', 'root', 'pwsio');
             self::$_pdo->exec('SET CHARACTER SET utf8');
         }
         return self::$_pdo;
