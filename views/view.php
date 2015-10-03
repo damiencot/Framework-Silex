@@ -2,7 +2,6 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link href="m2l.css" rel="stylesheet">
         <title>M2L</title>
     </head>
     <body>
@@ -10,15 +9,16 @@
             <h1>M2L</h1>
         </header>
         <?php
-           
-            foreach($villes as $ville){
+            foreach($citys as $city){
                 echo '<article>'
-                . '         <h2>'.$ville['name'].'</h2>'
+                . '         <p>'.$city->getId().'<p>'
+                . '         <p>'.$city->getLat().'</p>'
+                . '         <p>'.$city->getLong().'</p>'
+                . '         <p>'.$city->getName().'</p>'
                 . '   </article>';
             }
         ?>
         <footer>
-           
         </footer>
     </body>
 </html>
