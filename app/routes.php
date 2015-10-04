@@ -1,11 +1,9 @@
 <?php
-
-// Home page
-$app->get('/', function () use ($app) {
+//Home page
+$app->get('/', function() use ($app) {
     $citys = $app['dao.city']->findAll();
-
-    ob_start();             // start buffering HTML output
-    require '../views/view.php';
-    $view = ob_get_clean(); // assign HTML output to $view
-    return $view;
+   
+    return $app['twig']->render('index.html.twig', array(
+        'citys' => $citys
+    ));
 });
