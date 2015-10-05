@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>M2L</title>
+    </head>
+    <body>
+        <header>
+            <h1>M2L</h1>
+        </header>
+        {% for row in citys %}
+            <article>
+                <h2>{{row.getId}}</h2>
+                <p>{{row.getLat}}</p>
+                <p>{{row.getLong}}</p>
+                <p>{{row.getName}}</p>
+            </article>
+        {% endfor %}
+        <footer>
+        </footer>
+    </body>
+</html>
