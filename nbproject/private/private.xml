@@ -3,13 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/m2l/m2l_v0/Controler/salle.php</file>
-            <file>file:/var/www/m2l/m2l_v0/Model/model.php</file>
-            <file>file:/var/www/m2l/m2l_v0/index.php</file>
-            <file>file:/var/www/m2l/m2l_v0/View/view.php</file>
-            <file>file:/var/www/m2l/m2l_v0/Controler/ligue.php</file>
-            <file>file:/var/www/m2l/m2l_v0/Model/connexion.php</file>
-            <file>file:/var/www/m2l/m2l_v0/Controler/reservation.php</file>
+            <file>file:/var/www/m2l/m2l_v0/app/routes.php</file>
+            <file>file:/var/www/m2l/m2l_v0/composer.json</file>
+            <file>file:/var/www/m2l/m2l_v0/views/index.html.twig.html</file>
+            <file>file:/var/www/m2l/m2l_v0/.gitignore</file>
+            <file>file:/var/www/m2l/m2l_v0/src/Domain/City.php</file>
+            <file>file:/var/www/m2l/m2l_v0/web/.htaccess</file>
+            <file>file:/var/www/m2l/m2l_v0/src/DAO/CityDAO.php</file>
+            <file>file:/var/www/m2l/m2l_v0/app/app.php</file>
+            <file>file:/var/www/m2l/m2l_v0/web/index.php</file>
+            <file>file:/var/www/m2l/m2l_v0/app/config/dev.php</file>
+            <file>file:/var/www/m2l/m2l_v0/app/config/prod.php</file>
         </group>
     </open-files>
 </project-private>
