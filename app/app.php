@@ -1,20 +1,60 @@
 <?php
 
+
 use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\Debug\ExceptionHandler;
 
+
 // Register global error and exception handlers
+
 ErrorHandler::register();
+
 ExceptionHandler::register();
 
-// Register service providers.
-$app->register(new Silex\Provider\DoctrineServiceProvider());
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/../views',
-    
-));
 
-// Register services.
-$app['dao.city'] = $app->share(function ($app) {
-    return new m2l\DAO\CityDAO($app['db']);
+// Register service providers
+$app->register(new Silex\Provider\FormServiceProvider());
+$app->register(new Silex\Provider\TranslationServiceProvider());
+$app->register(new Silex\Provider\DoctrineServiceProvider());
+$app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views',));
+$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+$app->register(new Silex\Provider\SessionServiceProvider());
+$app->register(new Silex\Provider\SecurityServiceProvider(), array(
+
+    'security.firewalls' => array(
+
+        'secured' => array(
+
+            'pattern' => '^/',
+
+            'anonymous' => true,
+
+            'logout' => true,
+
+            'form' => array('login_path' => '/login', 'check_path' => '/login_check'),
+
+            'users' => $app->share(function () use ($app) {
+
+                return new M2L\DAO\UserDAO($app['db']);
+
+            }),
+
+        ),
+
+    ),
+
+));
+// Register services
+$app['dao.reservation'] = $app->share(function ($app) {
+    return new M2L\DAO\ReservationDAO($app['db']);
+});
+
+$app['dao.user'] = $app->share(function ($app) {
+    return new M2L\DAO\UserDAO($app['db']);
+});
+$app['dao.salle'] = $app->share(function ($app) {
+    $salleDAO = new M2L\DAO\SalleDAO($app['db']);
+    $salleDAO->setReservationDAO($app['dao.reservation']);
+    $salleDAO->setUserDAO($app['dao.user']);
+    return $salleDAO;
 });
