@@ -5,6 +5,6 @@ $app['db.options'] = array(
     'host' => 'localhost',
     'port' => '3306',
     'dbname' => 'm2l_V1',
-    'user' => 'root',
-    'password' => 'pwsio',
+    'user' => '',
+    'password' => '',
 );
