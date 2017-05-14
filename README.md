@@ -1,7 +1,7 @@
-    Français
+   -  Français
 
 Découverte du Framework Silex 
 
-    English
+   -  English
 
 Discovery of the Silex Framework
